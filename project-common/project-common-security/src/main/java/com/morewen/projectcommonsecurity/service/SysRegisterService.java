@@ -14,6 +14,8 @@ import com.morewen.projectsystem.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+
 /**
  * 注册校验方法
  * 
@@ -65,10 +67,13 @@ public class SysRegisterService
         {
             sysUser.setNickName(username);
             sysUser.setPassword(SecurityUtils.encryptPassword(password));
+            sysUser.setCreateTime(new Date());
             boolean regFlag = userService.registerUser(sysUser);
             if (!regFlag)
             {
                 msg = "注册失败,请联系系统管理人员";
+            } else {
+                msg = "注册成功";
             }
 
         }

@@ -30,6 +30,6 @@ public class SysRegisterController
         if (StringUtils.isEmpty(msg)) {
             return AjaxResult.error(msg);
         }
-        return AjaxResult.success();
+        return AjaxResult.success(msg);
     }
 }
