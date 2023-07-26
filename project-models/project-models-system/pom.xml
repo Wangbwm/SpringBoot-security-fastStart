@@ -4,50 +4,19 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.morewen</groupId>
-        <artifactId>project-common</artifactId>
+        <artifactId>project-models</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>project-common-security</artifactId>
+    <artifactId>project-models-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>project-common-security</name>
-    <description>project-common-security</description>
+    <name>project-system</name>
+    <description>project-system</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <jwt.version>0.9.1</jwt.version>
-        <fastjson.version>2.0.34</fastjson.version>
     </properties>
     <dependencies>
-
-        <!-- spring security 安全认证 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <!-- Token生成与解析-->
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>${jwt.version}</version>
-        </dependency>
-        <!-- 阿里JSON解析器 -->
-        <dependency>
-            <groupId>com.alibaba.fastjson2</groupId>
-            <artifactId>fastjson2</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-        <!-- redis 缓存操作 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <!-- pool 对象池 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -71,10 +40,26 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.morewen</groupId>
-            <artifactId>project-models-system</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+        <!-- mysql驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+        <!-- mybatis-plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+        <!-- druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.16</version>
         </dependency>
     </dependencies>
     <dependencyManagement>

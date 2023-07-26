@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.morewen</groupId>
-        <artifactId>springBoot-fastStart</artifactId>
+        <artifactId>project-models</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>project-webStart</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <artifactId>project-models-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>project-webStart</name>
-    <description>project-webStart</description>
+    <name>project-api-test</name>
+    <description>project-api-test</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <druid.version>1.2.16</druid.version>
+        <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
     </properties>
     <dependencies>
         <dependency>
@@ -46,37 +47,24 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.4.1</version>
         </dependency>
-        <!-- 阿里数据库连接池 -->
+        <!-- druid -->
         <dependency>
             <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid.version}</version>
+            <artifactId>druid</artifactId>
+            <version>1.1.16</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.morewen</groupId>
+            <artifactId>project-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>com.morewen</groupId>
             <artifactId>project-common-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.morewen</groupId>
-            <artifactId>project-common-security</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.morewen</groupId>
-            <artifactId>project-models-system</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.morewen</groupId>
-            <artifactId>project-models-test</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -107,7 +95,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.morewen.webstart.ProjectWebStartApplication</mainClass>
+                    <mainClass>com.morewen.projectapitest.ProjectApiTestApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
